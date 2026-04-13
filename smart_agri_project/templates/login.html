@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+
+<style>
+
+/* 🌾 Background Image */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url(' https://images.unsplash.com/photo-1511735643442-503bb3bd348a?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y3JvcHN8ZW58MHx8MHx8fDA%3D') no-repeat center center/cover;
+}
+
+/* 🌑 Dark overlay for readability */
+body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    top: 0;
+    left: 0;
+}
+
+/* 🌟 Container */
+.container {
+    position: relative;
+    background: rgba(255,255,255,0.9);
+    padding: 30px;
+    margin: 100px auto;
+    width: 320px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.5);
+    text-align: center;
+    animation: fadeIn 1s ease;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Inputs */
+input {
+    width: 90%;
+    padding: 12px;
+    margin: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* Button */
+button {
+    width: 95%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background: green;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: darkgreen;
+    transform: scale(1.05);
+}
+
+/* Error */
+.error {
+    color: red;
+}
+
+/* Links */
+a {
+    color: green;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h2 {
+    color: #2e7d32;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <h2>🌱 Welcome Back</h2>
+
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+
+    <form method="post">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+    </form>
+
+    <br>
+    <a href="/register">Create Account</a>
+
+</div>
+
+</body>
+</html>

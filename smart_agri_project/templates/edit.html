@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Edit</title>
+
+<style>
+body {
+    font-family: Arial;
+    background: #e0ffe0;
+    text-align: center;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    width: 300px;
+    margin: 80px auto;
+    border-radius: 10px;
+}
+
+input, select, button {
+    width: 90%;
+    padding: 10px;
+    margin: 8px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Edit Record</h2>
+
+<form action="/update/{{ record[0] }}" method="post">
+
+<input name="temperature" value="{{ record[1] }}">
+<input name="humidity" value="{{ record[2] }}">
+<input name="moisture" value="{{ record[3] }}">
+
+<input name="soil" value="{{ record[4] }}">
+<input name="crop" value="{{ record[5] }}">
+
+<input name="nitrogen" value="{{ record[6] }}">
+<input name="potassium" value="{{ record[7] }}">
+<input name="phosphorous" value="{{ record[8] }}">
+
+<button>Update</button>
+
+</form>
+
+</div>
+
+</body>
+</html>

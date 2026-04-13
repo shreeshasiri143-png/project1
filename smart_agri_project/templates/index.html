@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Agriculture</title>
+</head>
+<body>
+
+    <h2>Smart Agriculture Prediction</h2>
+
+    <form action="/predict" method="post">
+        <input type="text" name="n" placeholder="Nitrogen"><br><br>
+        <input type="text" name="p" placeholder="Phosphorus"><br><br>
+        <input type="text" name="k" placeholder="Potassium"><br><br>
+        <input type="text" name="temp" placeholder="Temperature"><br><br>
+        <input type="text" name="humidity" placeholder="Humidity"><br><br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    <h3>{{ prediction_text }}</h3>
+
+</body>
+</html>

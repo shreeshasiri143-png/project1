@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Records</title>
+
+<style>
+body {
+    font-family: Arial;
+    text-align: center;
+    background: #f4f4f4;
+}
+
+table {
+    width: 95%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: white;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid gray;
+}
+
+th {
+    background: green;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2>📊 Soil Records</h2>
+
+<table>
+<tr>
+<th>ID</th><th>Temp</th><th>Humidity</th><th>Moisture</th>
+<th>Soil</th><th>Crop</th><th>N</th><th>K</th><th>P</th><th>Fertilizer</th><th>Action</th>
+</tr>
+
+{% for row in records %}
+<tr>
+<td>{{ row[0] }}</td>
+<td>{{ row[1] }}</td>
+<td>{{ row[2] }}</td>
+<td>{{ row[3] }}</td>
+<td>{{ row[4] }}</td>
+<td>{{ row[5] }}</td>
+<td>{{ row[6] }}</td>
+<td>{{ row[7] }}</td>
+<td>{{ row[8] }}</td>
+<td>{{ row[9] }}</td>
+
+<td>
+<a href="/edit/{{ row[0] }}">Edit</a> |
+<a href="/delete/{{ row[0] }}">Delete</a>
+</td>
+</tr>
+{% endfor %}
+
+</table>
+
+<a href="/dashboard">⬅ Back</a>
+
+</body>
+</html>
